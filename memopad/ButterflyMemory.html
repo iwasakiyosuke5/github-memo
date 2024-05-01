@@ -34,7 +34,7 @@
             <p><i class="fas fa-cloud-upload-alt"></i>下記をclickかD&Dで写真！</p>
             <input class="img" type="file" name="upload_file" id="input-files">
         </div>
-        <!-- <input type="submit" id="submit-btn" value="送信"> -->
+    
     </form>
 
     <textarea id="comment" placeholder="採集状況　簡単な場所など"></textarea>
@@ -78,12 +78,7 @@ let date = new Date();
 console.log(date);
 
 
-//1.Save クリックイベント
-// $("#save").on("click",function(){
-    // let IDCount = localStorage.length;
-//     ID++
 
-// });
 
 
 $("#save").on("click",function(){
@@ -91,11 +86,13 @@ $("#save").on("click",function(){
     const name = $("#name").val();
     const sex = $("#sex").val();
     // const value = $("#comment").val();
+    // const img = $("#input-files").val();
     const data = {
 
         sex: sex,
         lati: $("#latitude").text(),
         longi: $("#longitude").text(),
+        img: $("#input-files").val(),
         value: $("#comment").val(),
         date: new Date().toString()
 
@@ -154,7 +151,7 @@ for (let i = 0; i < localStorage.length; i++) {
     const data = JSON.parse(localStorage.getItem(name)); // JSON 文字列をオブジェクトに戻す
 
     // 各データを直接表示する
-    const html = '<tr><th>' + name + '</th><td>' + data.sex + '</td><td>' + data.lati + '</td><td>' + data.longi + '</td><td>' + data.value + '</td><td>' + data.date + '</td></tr>';
+    const html = '<tr><th>' + name + '</th><td>' + data.sex + '</td><td>' + data.lati + '</td><td>' + data.longi + '</td><td>' + data.img + '</td><td>' + data.value + '</td><td>' + data.date + '</td></tr>';
     
     $("#list").append(html);
 };
