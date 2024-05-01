@@ -28,9 +28,10 @@
         <div class="latitude">緯度：<span id="latitude" value="lati"></span></div>
         <div class="longitude">経度：<span id="longitude" value="longi"></span></div>
     </div>
-
+    <!-- img登録 -->
     <form action="" method="POST" enctype="multipart/form-data">
-        <div class="upload-area">            
+        <div class="upload-area"> 
+            <!--下記は雲イラスト  -->
             <p><i class="fas fa-cloud-upload-alt"></i>下記をclickかD&Dで写真！</p>
             <input class="img" type="file" name="upload_file" id="input-files">
         </div>
@@ -43,6 +44,7 @@
         <li id="clear">全てを<span class="span">Clear</span></li>
     </ul>
 
+    <!-- 任意のデータのみを消すよう -->
     <p class="" for="keys">任意のデータを消したいときは下から選んでね</p>
         <select id="keys" >
             <option value="" hidden>名前を選択</option>
@@ -58,6 +60,7 @@
 </table>
 
 <script>
+// 位置情報の取得
 function test() {
     navigator.geolocation.watchPosition(test2);
 }
@@ -83,10 +86,15 @@ console.log(date);
 
 $("#save").on("click",function(){
     // データをオブジェクトにまとめる
+    // 名前の変数化
     const name = $("#name").val();
+    // 性別の変数化
     const sex = $("#sex").val();
+    // テキストエリアの変数化
     // const value = $("#comment").val();
+    // imgの変数化
     // const img = $("#input-files").val();
+    // テキストエリアとimgは直接配列としてdataに入れた方が良さそう
     const data = {
 
         sex: sex,
@@ -177,6 +185,7 @@ $("#delete").on("click", function(){
         });
 
 </script>
+<!-- 下記はfooter用シンボル -->
 <footer><small>    <i class="fa-solid fa-globe" style="color: #c11f96;"></i>
 </small></footer>
 </body>
