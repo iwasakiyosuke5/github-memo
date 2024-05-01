@@ -86,15 +86,20 @@ li:hover{
     font-size:80%;
     width: 30%;
 }
+.positionBtn:hover{
+    background-color: #0d7dfd;
+}
+
+
 
 .position{
     margin: 10px 3%;
     font-size:80%;
     .latitude{
-        height: 45px;
+        height: 100%;
     }
     .longitude{
-        height: 45px;
+        height: 100%;
     }
 }
 
@@ -111,7 +116,7 @@ li:hover{
 textarea{
   margin: 10px 3%;
   width: 95%;
-  height: 100px;
+  height: 100%;
   font-size:80%;
   box-shadow: 3px 3px 3px 3px #555;
   background-color:rgb(241, 239, 239);
@@ -130,8 +135,8 @@ table{
     
 }
 th{
-    width:30%;
-    font-size:24px;
+    width: 30%;
+    font-size: 24px;
     background-color:#d0e7fc;
     border-bottom: 1px solid #8dc3f5;
 }

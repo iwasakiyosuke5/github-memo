@@ -5,6 +5,7 @@
 <title>myMemoPad</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="css/sample.css">
+<script src="https://kit.fontawesome.com/862824129a.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <header>
@@ -13,8 +14,6 @@
 <main>
     <p>下記をクリックして名前<br><span class="span">同じ蝶々には番号入れたほうがいいよ</span></p>
     <input class="name" type="text" id="name">
-
-    
     <select name="" calss="sex" id="sex">
         <option value="" hidden>雌雄選択</option>
         <option value="雄">雄</option>
@@ -24,15 +23,15 @@
     </select>
 
     <button class="positionBtn" onclick="test()">位置情報取得</button>
+    <p>iPhoneの時は<span class="span">safariの位置情報サービスをON</span>にしてね</p>
     <div class="position">
         <div class="latitude">緯度：<span id="latitude" value="lati"></span></div>
         <div class="longitude">経度：<span id="longitude" value="longi"></span></div>
     </div>
 
     <form action="" method="POST" enctype="multipart/form-data">
-        <div class="upload-area">
-            <i class="fas fa-cloud-upload-alt"></i>
-            <p>下記をclickかD&Dで写真！</p>
+        <div class="upload-area">            
+            <p><i class="fas fa-cloud-upload-alt"></i>下記をclickかD&Dで写真！</p>
             <input class="img" type="file" name="upload_file" id="input-files">
         </div>
         <!-- <input type="submit" id="submit-btn" value="送信"> -->
@@ -181,6 +180,7 @@ $("#delete").on("click", function(){
         });
 
 </script>
-<footer><small>G's</small></footer>
+<footer><small>    <i class="fa-solid fa-globe" style="color: #c11f96;"></i>
+</small></footer>
 </body>
 </html>
