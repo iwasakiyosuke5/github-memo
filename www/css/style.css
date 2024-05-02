@@ -1,0 +1,594 @@
+/* ここから下に記載していく */
+body {
+    width: 1200px;
+    margin-left: 45px;
+}
+
+.header {
+    height: 121px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    margin: auto 0 auto 50px; 
+    
+}
+.navi a {
+    font-size: 21px;
+    color: black;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    display: block;
+    float: left;
+    /* padding-right: 50px; */
+    cursor: alias;
+}
+.navi a:hover {
+    display: inline;
+    position: relative;
+    top: -5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #ffd61a;
+    border-radius: 10px;
+    
+
+}
+
+/* here main */
+
+
+/* here title*/
+.title h3 {
+    font-size: 24px;
+}
+.title h4 {
+    font-size: 18px;
+}
+
+.title p {
+    font-size: 16px;
+}
+
+.about h3 {
+    color: #ffd61a;
+}
+
+.news h3 {
+    color: #ffd61a;
+}
+
+
+
+
+/* top */
+.top img {
+    width: 1200px;
+    border-radius: 15px;
+}
+.top {
+    position: relative;
+    .copy {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* センター寄せの作業 */
+        transform: translate(-50%, -50%); 
+        /* ぼかしの作業 */
+        backdrop-filter: blur(10px);
+        /* グレイスケール */
+        /* backdrop-filter: grayscale(50%); */
+        /* 位相のズレ */
+        /* backdrop-filter: hue-rotate(180deg); */
+        /* 不透明度 */
+        /* backdrop-filter: opacity(100%); */
+        /* 彩度 */
+        /* backdrop-filter: saturate(300%); */
+        border-radius: 15px;
+
+    }
+    /* display: block; */
+    text-align: center;
+    h1 {
+        font-size: 35px;
+        color: white;
+        padding-bottom: 30px;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: black;
+        
+    }
+    h2 {
+        font-size: 25px;
+        color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        span {
+            color: #ffd61a;
+            -webkit-text-stroke-color: #ffd61a;
+        }
+    }
+}
+
+
+
+
+
+/* ABOUT */
+.about {
+    display: block;
+    text-align: center;
+}
+.about h3 {
+    font-weight: bold;
+    /* margin-top: 60px;
+    margin-bottom: 30px; */
+
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+.about h4 {
+    padding-bottom: 60px;
+}
+.about p {
+    padding-bottom: 40px;
+}
+.lh {
+    line-height: 1.5;
+}
+
+.titleImage {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* float: left; */
+    /* width: 1200px */
+}
+.titleImage img {
+    width: 300px;
+    border-radius: 15px;
+}
+
+/* ここからcourse */
+/* courseのメイン */
+.cM {
+    padding-bottom: 60px;
+    display: block;
+    text-align: center;
+}
+
+.cM h3 {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    font-weight: bold;
+}
+
+/* imgのリサイズ */
+
+
+/* ここから説明箇所 */
+/* 言葉間のpadding */
+
+.train, .deploy, .knowledge {
+    background-color: rgb(246, 246, 246);
+    border-radius: 15px 15px 0 0;
+    width: 1200px;
+    display: flex; 
+    justify-content: center;
+    filter: grayscale(60%) blur(3px);
+     img {
+        width: 50%;
+        border-radius: 15px;
+    }
+    .TWord, .deployWord, .KLWord {
+        height: 404.7px;
+        position: relative; 
+        padding-left: 15px;
+        width: 50%;
+        .WordLayout {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%)
+        }
+        h3 {
+            padding-bottom: 40px;
+        }
+    }
+}
+
+.knowledge {
+    flex-direction: row-reverse;
+    .KLWord {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+}
+
+.train:hover, .deploy:hover, .knowledge:hover{
+    filter: none;
+}
+
+
+
+/* NEWS */
+/* 見出し */
+.news {
+    display: block;
+    text-align: center;
+    h3 {
+        padding-top: 60px;
+    }
+    h4 {
+        padding-top: 30px;
+    }
+}
+
+.News {
+display: flex;
+justify-content: center;
+margin-top: 60px;
+
+ h5 {
+    padding-top: 30px;
+    font-size: 14px;
+    
+ }
+ p {
+    padding-top: 24px;
+    font-size: 14px;
+    line-height: 1.5;
+ }   
+}
+
+.pizza {
+    border-radius: 15px;
+}
+
+.News p {
+    margin-bottom: 3%;
+    /* pointer-events: none; */
+}
+.news1, .news2, .news3 {
+    filter: saturate(0);
+    display: block;
+    margin-left: 15px;
+    margin-right: 15px;
+    img  {  
+        width: 300px;
+    }
+    h5, p {
+        filter: blur(3px);
+    }
+}
+.news1:hover, .news2:hover, .news3:hover {
+    filter: none;
+    h5, p {
+        filter: none;
+    }
+    background-color: #ffd61a;
+    border-radius: 15px;
+    outline: 0.5px solid #707070;
+    outline-offset: -0.5px;
+    
+}
+
+
+.news1:hover ~ .UNnews1 {
+    filter: blur(3px) saturate(0);
+}
+
+.news1:has(+.news2:hover){
+    filter: blur(3px) saturate(0);
+}
+
+.news2:hover ~ .UNnews2 {
+    filter: blur(3px) saturate(0);
+}
+
+
+/* .news2:has(+.news3:hover){
+    filter: blur(3px) saturate(0);
+}
+
+#news1:has(+.news3:hover){
+    filter: blur(3px) saturate(0);
+} */
+
+
+
+
+
+/* MORE */
+.MOREBOX {
+    padding: 60px 0;
+    text-align: center;
+
+    .MORE {
+    box-shadow: 0 7px rgb(130, 130, 130);
+    border-radius: 15px;
+    border: #ffd61a;
+    background-color: #ffd61a;
+    height: 60px;
+    width: 300px;
+    font-size: 18px;
+    cursor: alias;
+    
+    }
+    .MORE:hover {
+        border: 2px solid #707070;
+        box-sizing: border-box;
+        
+    }
+    .MORE:active {
+
+        box-shadow: none;
+        position: relative;
+        top: 7px;
+        
+    }
+}
+
+/* Access */
+.access {
+    display: block;
+    text-align: center;
+    background-color: rgb(246, 246, 246);
+    border-radius: 15px 15px 0 0;
+    iframe {
+        border-radius: 15px;
+    }
+}
+.access h3{
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+.access h4{
+    padding-bottom: 60px;
+}
+
+/* 住所 */
+.adress {
+    display: flex;
+    justify-content: center;
+    padding: 45px 0;
+    background-color: rgb(246, 246, 246);
+    border-radius: 0 0 15px 15px;
+}
+.adress td {
+    padding: 15px 30px;
+    /* height 50pxはダサいので文字化 */
+    /* height: 50px; */
+}
+
+
+/* CONTACT only*/
+.contact {
+    display: block;
+    text-align: center;
+}
+.contact h3 {
+    font-weight: bold;
+    /* margin-top: 60px;
+    margin-bottom: 30px; */
+
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+.contact h4 {
+    padding-bottom: 60px;
+}
+
+.notice {
+    padding-top: 30px;
+    padding-bottom: 70px;
+}
+
+/* 応募フォーム */
+/* 応募フォームの呼び出し */
+.pattarn2 {
+    position: relative;
+    width: 1200px;
+    width: 100%;
+}
+
+summary {
+    box-shadow: 0 7px rgb(130, 130, 130);
+    cursor: alias;
+    position: relative;
+    left: 37.5%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    
+    text-align: center;
+    font-size: 18px;
+    list-style: none;
+    background-color:#ffd61a;
+    width:300px;
+    border-radius: 15px;
+}
+
+summary:hover {
+    outline: 2px solid #707070;
+    outline-offset: -2px;
+}
+summary:active {
+    box-shadow: none;
+    position: relative;
+    top: 7px;
+}
+
+
+/* form */
+.form table {
+    display: flex;
+    justify-content: center;
+    padding: 0 0;
+}
+
+.form tr {
+    border-bottom: 1px solid #bfbfbf;
+
+
+}
+.tdTop {
+    border-top: 3.6px solid #bfbfbf;
+    padding-top: 8px;   
+    /* height: 24px; */
+
+}
+
+.td1 {
+    width: 200px;
+    padding-left: 16px;
+    padding-right: 64px;
+    border-right: 1px solid #bfbfbf;
+    padding-bottom: 8px;
+    /* padding-top: 8px; */
+}
+
+.td2 {
+    
+    width: 440px;
+    padding-left: 8px;
+    padding-top:  8px;
+    padding-bottom: 8px;
+    /* line-height: 2.5; */
+    input {
+        border: 1px solid #707070;
+    }
+}
+
+.txt {
+    width: 300px;
+    border-radius: 5px;
+    border: 0.1px solid;
+    /* line-height: 1.5; */
+    /* padding-top: -8px; */
+    /* padding-bottom: -8px; */
+    height: 24 px;
+
+}
+
+
+/* selectbox */
+.form select{
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ffd61a;
+    border: 1px solid #707070;
+    width: 308px;
+}
+select, option {
+    /* 以下カーソルの種類確認用 */
+    cursor: pointer;
+    /* cursor: move; */
+    /* cursor: wait; */
+    /* cursor: alias; */
+}
+
+.BOX {
+    font-size: 16px;
+}
+
+/* チェックボックス */
+.checkbox input {
+    
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    
+}
+.checkbox label {
+    position:relative;
+    padding-left:1.5em;
+    cursor: pointer;
+}
+.checkbox label:before {
+    content:"";
+    display:block;
+    box-sizing:border-box;
+    height:14px;
+    width:14px;
+    position:absolute;
+    border:solid 1px #555;
+    border-radius: 5px;
+    top: 50%;
+    bottom:0;
+    margin-top:-7px;
+    transition:0.4s;
+}
+.checkbox input[type="checkbox"]:checked + label:before{
+    background: #ffd61a;
+    transform:scale(1.4) rotate(90deg);
+}
+.checkbox {
+    line-height: 1.5;
+}
+
+.form p {
+    /* font-size: 24px; */
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.td1Detail {
+    position: relative;
+    top: -84px;
+}
+
+/* textarea */
+textarea {
+    width: 300px;
+    height: 100px;
+    border-radius: 7px;
+    border: 1px solid #707070;
+    position: relative;
+    top: 0px;
+}
+
+
+/* SB */
+.SBBOX {
+    padding: 60px 0;
+    text-align: center;
+
+    .SB {
+    box-shadow: 0 7px rgb(130, 130, 130);
+    border-radius: 15px;
+    border: #ffd61a;
+    background-color: #ffd61a;
+    height: 60px;
+    width: 300px;
+    font-size: 18px;
+    cursor: alias;
+    }
+    .SB:hover {
+        border: 2px solid #707070;
+        box-sizing: border-box;
+    }
+    .SB:active {
+        box-shadow: none;
+        position: relative;
+        top: 7px;
+    }
+}
+
+
+.footer {
+    background-color: #707070;
+    padding: 30px 30px;
+}
+.footer p {
+    color: white;
+    display: flex;
+    justify-content: center;
+}

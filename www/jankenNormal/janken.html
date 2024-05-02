@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>じゃんけん</title>
+</head>
+<body>
+
+<header>
+  <h1>じゃんけん</h1>
+  <h3>20回対戦して勝率<span>50%</span>を目指しそう！</h3>
+</header>
+
+<main>
+  <div class="jankenN">対戦回数：<span id="jankenN">0回</div>
+  <div class="Evaluation"><span id="winParImg"></div>
+
+  <ul>
+    <li id="gu_btn">グー✊</li>
+    <li id="cho_btn">チョキ✌️</li>
+    <li id="par_btn">パー🖐️</li>
+  </ul>
+  <div class="vsHand">
+    <div>対戦相手の手は</div>
+    <div id="pc_hands">なに？</div>    
+  </div>
+  <div class="judgment">判定：<span id="judgment">-</div>
+  <div class="results">
+      <div class="result">勝ち数：<span id="winN">0回</div>
+      <div class="result">引き分け数：<span id="evenN">0回</div>
+      <div class="result">負け数：<span id="loseN">0回</div>
+  </div>
+  <div class="winRate">勝率：<span id="winParcent">-%</div>
+  <div class="center"><button id="endBtn" style="display: none">終了する</button></div>
+</main>
+  
+<footer class="footer">
+  <p>copyrights jajankenkyokai.</p>
+</footer>
+
+
+
+<script>
+//じゃんけん用のSCRIPTを書いてください
+let winN = 0;
+let evenN = 0;
+let loseN = 0;
+let gameN = 0;
+
+$("#gu_btn").on("click",function() {
+  
+  const a = Math.ceil(Math.random()*3)
+  $("#cho_btn, #par_btn").css("filter", "blur(5px)");
+  setTimeout(function() {
+    $("#cho_btn, #par_btn").css("filter", "");
+  }, 400); 
+
+  if(a === 1){
+    console.log("good");
+    winN++;
+    $("#pc_hands").html('<img src="./img/cho.png">');
+    setTimeout(function() {
+    $("#judgment").html("かち");
+    $("#winN").html(winN + "回");
+    console.log(winN + "回");
+    }, 400); 
+    // $("#judgment").html("かち");
+    
+    
+  }else if(a === 2){
+    console.log("even");
+    evenN++;
+    $("#pc_hands").html('<img src="./img/gu.png">');
+    setTimeout(function() {
+    $("#judgment").html("引き分け");
+    $("#evenN").html(evenN + "回");
+    console.log(evenN + "回");
+    }, 400); 
+    // $("#judgment").html("引き分け");
+    
+    
+  }else{
+    console.log("bad");
+    loseN++;
+    $("#pc_hands").html('<img src="./img/par.png">');
+    setTimeout(function() {
+    $("#judgment").html("負け");
+    $("#loseN").html(loseN + "回");
+    console.log(loseN + "回");
+  }, 400); 
+
+    // $("#judgment").html("負け");
+  };
+  
+
+});
+
+$("#cho_btn").on("click",function() {
+  
+  const a = Math.ceil(Math.random()*3)
+  $("#gu_btn, #par_btn").css("filter", "blur(5px)");
+  setTimeout(function() {
+    $("#gu_btn, #par_btn").css("filter", "");
+  }, 400); 
+  
+
+  if(a === 1){
+    console.log("good");
+    winN++;
+    $("#pc_hands").html('<img src="./img/par.png">');
+    setTimeout(function() {
+    $("#judgment").html("かち");
+    $("#winN").html(winN + "回");
+    console.log(winN + "回");
+    }, 400);
+    
+
+  }else if(a === 2){
+    console.log("even");
+    evenN++;
+    $("#pc_hands").html('<img src="./img/cho.png">');
+    setTimeout(function() {
+    $("#judgment").html("引き分け");
+    $("#evenN").html(evenN + "回");
+    console.log(evenN + "回");
+    }, 400); 
+    
+  }else{
+    console.log("bad");
+    loseN++;
+    $("#pc_hands").html('<img src="./img/gu.png">');
+    setTimeout(function() {
+    $("#judgment").html("負け");
+    $("#loseN").html(loseN + "回");
+    console.log(loseN + "回");
+  }, 400); 
+  };
+  
+
+});
+
+$("#par_btn").on("click",function() {
+  
+  const a = Math.ceil(Math.random()*3)
+  $("#cho_btn, #gu_btn").css("filter", "blur(5px)");
+  setTimeout(function() {
+    $("#cho_btn, #gu_btn").css("filter", "");
+  }, 400); 
+  
+
+  if(a === 1){
+    console.log("good");
+    winN++;
+    $("#pc_hands").html('<img src="./img/gu.png">');
+    setTimeout(function() {
+    $("#judgment").html("かち");
+    $("#winN").html(winN + "回");
+    console.log(winN + "回");
+    }, 400);
+
+  }else if(a === 2){
+    console.log("even");
+    evenN++;
+    $("#pc_hands").html('<img src="./img/par.png">');
+    setTimeout(function() {
+    $("#judgment").html("引き分け");
+    $("#evenN").html(evenN + "回");
+    console.log(evenN + "回");
+    }, 400); 
+    
+  }else{
+    console.log("bad");
+    loseN++;
+    $("#pc_hands").html('<img src="./img/cho.png">');
+    setTimeout(function() {
+    $("#judgment").html("負け");
+    $("#loseN").html(loseN + "回");
+    console.log(loseN + "回");
+  }, 400); 
+  };
+  
+
+});
+
+
+
+$("#gu_btn, #cho_btn, #par_btn").on("click",function() {
+  gameN++;
+  console.log("gameN:" + gameN);
+  $("#jankenN").html(gameN + `回`);
+  
+  finalParcent = Math.floor(winN / gameN * 100); // finalParcentに値を代入
+
+  console.log(finalParcent + "%");
+  setTimeout(function() {
+    $("#winParcent").html(finalParcent + "%");
+  }, 400);
+
+  if (gameN === 20 && winN / gameN * 100 >= 50) {
+    setTimeout(function() {
+      $("#winParImg").html("おめでとう");
+    }, 400);
+
+  } else if (gameN === 20 && winN / gameN * 100 >= 30) {
+    setTimeout(function() {
+      $("#winParImg").html("あともう少し");
+    }, 400);
+
+  } else if (gameN === 20 && winN / gameN * 100 < 30) {
+    setTimeout(function() {
+      $("#winParImg").html("残念");
+    }, 400);
+
+  } else {
+    $("#winParImg").html("残り" + (20 - gameN) + "回");
+  };
+
+  if (gameN === 20) {
+    document.getElementById("gu_btn").style.pointerEvents = "none";
+    document.getElementById("cho_btn").style.pointerEvents = "none";
+    document.getElementById("par_btn").style.pointerEvents = "none";
+    setTimeout(function() {
+      $("#endBtn").css("display", "block");
+    }, 400);
+
+  }
+});
+
+let winParcentList = [];
+let finalParcent = 0; // 初期値を設定
+
+$("#endBtn").on("click", function() {
+  winN = 0;
+  evenN = 0;
+  loseN = 0;
+  gameN = 0;
+  jankenN = 0;
+  // フッターに勝率を羅列する
+  // if (!isNaN(winParcent)) {
+  //   // 勝率を配列に追加
+  //   winParcentList.push(winParcent);
+  // }
+
+    winParcent = Math.floor(winN / gameN * 100);
+
+  // let winParcent = Math.floor(winN / gameN * 100);
+  // let footer = document.querySelector("footer");
+  // let winRateRecord = document.createElement("div");
+  // let winRateText = "勝率記録: " + winRates.join("%, ") + "%";
+  // winRateRecord.textContent = winRateText;
+  // footer.appendChild(winRateRecord);
+
+  // 勝率を配列に追加
+  // winParcentList.push(winParcent);
+  
+  // 勝率をHTMLに表示
+  // $("#winParcent").html(winParcent + "%");
+  
+  // フッターに勝率を表示かなり惜しい
+  // let footerHTML = "勝率記録：";
+  // winParcentList.forEach(function(winParcent, index) {
+  //    footerHTML += winParcent + "%";
+  //    if (index !== winParcentList.length - 1) {
+  //     footerHTML += ", ";
+  //    }
+  // });
+  // $("footer").append(footerHTML);
+  winParcentList.push(finalParcent);
+
+// 勝率をHTMLに表示
+  $("#winParcent").html(finalParcent + "%");
+
+  // フッターに勝率を表示
+  let footerHTML = "勝率記録：" + winParcentList.join("%, ") + "%";
+  $("footer").html(footerHTML);
+
+
+
+  $("#pc_hands").html("なに？");
+  $("#judgment").html("-");
+  $("#jankenN").html(jankenN + "回");
+  $("#winN").html(winN + "回");
+  $("#evenN").html(evenN + "回");
+  $("#loseN").html(loseN + "回");
+  $("#gameN").html(gameN + "回");
+  $("#winParcent").html("0%");
+  $("#winParImg").html("");
+  $("#endBtn").css("display", "none");
+  document.getElementById("gu_btn").style.pointerEvents = "auto";
+  document.getElementById("cho_btn").style.pointerEvents = "auto";
+  document.getElementById("par_btn").style.pointerEvents = "auto";
+
+
+});
+
+</script>
+</body>
+</html>
